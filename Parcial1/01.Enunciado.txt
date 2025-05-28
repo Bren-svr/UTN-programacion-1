@@ -1,0 +1,88 @@
+Desarrollar algorítmicamente en Python: 
+
+Una institución educativa desea procesar los datos de sus estudiantes.  
+Para ello, se tienen los siguientes datos:  
+
+ Una matriz de números enteros de 30 filas por 5 columnas que corresponde a las calificaciones, donde: 
+o Cada fila representa un estudiante. 
+o Cada columna representa una materia. 
+o Cada valor en la intersección es una calificación entera entre 1 y 10. 
+ Una lista de nombre de los estudiantes. 
+ Una lista de géneros de los estudiantes. Cada género debe ser alguno de los siguientes: [‘F’ | ‘M’ | ‘X’] 
+ Una lista de legajos de los estudiantes. Cada legajo debe ser numérico del tipo entero de cinco cifras. 
+
+Cada una de estas listas, se corresponden con las filas de la matriz. Es decir, que se debe trabajar como listas 
+paralelas entre la matriz y las otras listas. 
+Se deberá programar un menú de opciones operado por consola, que realice lo siguiente: 
+1 – Realizar la carga de los datos en la matriz y en cada una de las listas. Realizar una función para validar cada 
+dato a ser cargado. 
+2 – Mostrar todos los datos, esto es la matriz completa de calificaciones conjuntamente con las listas de legajo, 
+género y nombre del estudiante. Realizar una función que muestre uno y otra que muestre todos. 
+3 – Calcular el promedio de cada estudiante y guardarlo en una nueva lista. Realizar una función que calcule el 
+promedio. 
+4 – Ordenar y mostrar los datos de los estudiantes por promedio de manera DESC. Realizar una función que 
+ordene, la cual deberá ordenar de manera ASC o DESC de acuerdo a un parámetro de ordenamiento. 
+5 – Mostrar la/s materia/s con mayor promedio general. Realizar una función para mostrar todas y otra para 
+mostrar una. Teniendo en cuenta que no hay una lista de materias, sino que cada columna de la matriz 
+representa una materia, entonces cada materia tomará la siguiente nomenclatura para su nombre MATERIA_ 
+índice más uno. Por ejemplo: para la materia del índice cero de la columna, será MATERIA_1. 
+6 – Buscar y mostrar todos los datos de un estudiante por legajo, incluyendo el promedio calculado en el ítem 3. 
+Realizar una función de búsqueda. Realizar una función que muestre uno y otra que muestre todos. 
+7 – Buscar y mostrar cuantas veces se repite cada calificación en una asignatura determinada. 
+Realizar una función que reciba la matriz de calificaciones y el número de materia (índice más uno) como 
+parámetros, y retorne una lista de 10 elementos, donde en el índice 0 estará la cantidad de veces que se repite la 
+nota 1, en el índice 1 estará la cantidad de veces que se repite la nota 2, y así sucesivamente hasta el índice 9 
+donde estará la cantidad de veces que se repite la nota 10. 
+8 – Salir del programa. 
+1
+
+
+NOTAS: 
+Nota 0: Los datos de la matriz y las listas podrán estar hardcodeados a los efectos de realizar las pruebas de 
+funcionamiento correspondientes. 
+
+Nota 1: No se podrá acceder a ningún ítem del menú, sin antes haber cargado los datos.
+ En tal sentido, realizar la validación correspondiente. 
+
+Nota 2: Los puntos deben ser accedidos mediante un menú de opciones.  
+
+Nota 3: Cada ítem del menú deberá ser una función. 
+
+Nota 4: Se deberá desarrollar biblioteca y funciones propias,
+las mismas deberán estar correctamente documentadas. 
+
+Nota 5: Se deberá desarrollar una función para la validación de cada uno de los datos. 
+
+Nota 6: Desarrollar una función que recorra los elementos (mostrar todos) 
+y otra que muestre un elemento (mostrar uno). 
+La segunda será llamada dentro de la primera. 
+
+Nota 7: Para realizar el menú de opciones, se deberá utilizar la estructura de control match. 
+
+Nota 8: El menú de opciones deberá estar contenido dentro (anidado) de una estructura de control while.
+
+# matriz_de_notas = [
+#     [7, 5, 9, 6, 8], [10, 4, 6, 7, 8], [3, 6, 7, 5, 9], [4, 8, 10, 6, 5], [6, 7, 9, 3, 10],
+#     [9, 5, 7, 6, 8], [8, 6, 10, 9, 4], [7, 8, 5, 6, 10], [10, 9, 8, 7, 6], [5, 4, 6, 7, 9],
+#     [6, 5, 4, 8, 10], [7, 9, 10, 6, 5], [3, 5, 7, 8, 6], [10, 10, 10, 9, 8], [8, 7, 6, 5, 4],
+#     [6, 7, 8, 9, 10], [5, 6, 7, 8, 9], [4, 5, 6, 7, 8], [3, 4, 5, 6, 7], [2, 3, 4, 5, 6],
+#     [9, 8, 7, 6, 5], [10, 9, 8, 7, 6], [6, 7, 8, 9, 10], [5, 6, 7, 8, 9], [4, 5, 6, 7, 8],
+#     [3, 4, 5, 6, 7], [2, 3, 4, 5, 6], [1, 2, 3, 4, 5], [10, 10, 9, 8, 7], [6, 6, 6, 5, 4]]
+
+# lista_de_nombres = [
+#     "Ana", "Benjamín", "Carla", "Damián", "Elena", "Facundo", "Gabriela", "Hernán", "Inés", "Julián",
+#     "Karina", "Luis", "Mariana", "Nicolás", "Olivia", "Pablo", "Quimey", "Rodrigo", "Sofía", "Tomás",
+#     "Ursula", "Franco", "Wanda", "Xavier", "Yamila", "Zacarías", "Alma", "Bruno", "Camila", "Diego"]
+
+# lista_de_generos =  [
+#     "F", "M", "F", "M", "F", "M", "F", "M", "F", "M",
+#     "F", "M", "F", "M", "F", "M", "X", "M", "F", "M",
+#     "F", "M", "F", "M", "F", "M", "F", "M", "F", "M"]
+
+# lista_de_legajos = [
+#     10001, 10002, 10003, 10004, 10005,
+#     10006, 10007, 10008, 10009, 10010,
+#     10011, 10012, 10013, 10014, 10015,
+#     10016, 10017, 10018, 10019, 10020,
+#     10021, 10022, 10023, 10024, 10025,
+#     10026, 10027, 10028, 10029, 10030]
